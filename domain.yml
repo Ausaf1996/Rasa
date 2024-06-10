@@ -1,0 +1,172 @@
+intents:
+  - greet
+  - Register
+  - bye
+  - slider
+  - images
+  - delete
+  - inform
+
+entities:
+  - name
+  - email
+  - dob
+  - phone
+  - time
+  - otp
+  - gender
+  - age
+  - payment
+  - paymentid
+  - nremove
+
+
+slots:
+  name:
+    type: unfeaturized
+    auto_fill: false
+  phone:
+    type: unfeaturized
+    auto_fill: false
+  otp:
+    type: unfeaturized
+    auto_fill: false
+  dob:
+    type: unfeaturized
+    auto_fill: false
+  email:
+    type: unfeaturized
+    auto_fill: false
+  time:
+    type: unfeaturized
+    auto_fill: false
+  time_range:
+    type: unfeaturized
+    auto_fill: false
+  gender:
+    type: unfeaturized
+    auto_fill: false
+  age:
+    type: unfeaturized
+    auto_fill: false
+  payment:
+    type: unfeaturized
+    auto_fill: false
+  paymentid:
+    type: unfeaturized
+    auto_fill: false
+  nremove:
+    type: unfeaturized
+
+templates:
+
+  utter_default:
+    - "Sorry, I did not understand."
+    - "I was unable to understand."
+    - "I am having trouble understanding."
+
+  utter_ask_name:
+    - text: "Please Enter your name"
+
+  utter_ask_phone:
+    - text: "Enter your phone number"
+
+  utter_ask_otp:
+    - buttons:
+        - payload: '/Resend'
+          title: 'Resend'
+      text: "Enter OTP"
+
+  utter_ask_email:
+    - text: "Enter your email"
+
+  utter_ask_dob:
+    - text: "When did you like to book the appointment"
+
+  utter_ask_time:
+    - text: "These are the available time slots,select one"
+
+
+  utter_ask_gender:
+    - buttons:
+        - payload: '/Register'
+          title: 'Male'
+        - payload: '/Register'
+          title2: 'Female'
+      text: "Enter your gender"
+
+  utter_ask_age:
+    - text: "Choose age"
+
+  utter_ask_paymentid:
+    - text: "Enter UPI Transaction Id"
+
+  utter_wrong_Id:
+    - text: "Invalid UPI transaction Id. Try again"
+
+  utter_ask_payment:
+    - buttons:
+        - payload: 'Pay'
+          title: 'Pay Now'
+        - payload: 'Pay later'
+          title2: 'Pay Later'
+      text: "Appointment Fee Rs.200/"
+
+  utter_Register:
+    - buttons:
+        - payload: '/Register'
+          title: 'Register'
+      text: "Click here to Register"
+
+  utter_bye:
+    - text: "See you soon. Talk to you later!"
+
+  utter_images:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_wrong_name:
+    - text: "In valid  Name.Please try again"
+
+  utter_wrong_otp:
+    - text: "In valid OTP.Please try again"
+
+  utter_wrong_email:
+    - text: "Invalid Email.Please try again"
+
+  utter_wrong_phone_number:
+    - text: "Invalid Number.Please try again"
+    
+  utter_delete_detail:
+    - text: "Please let us know the name using which you have booked your appointment"
+
+actions:
+  - action_delete
+  - utter_default
+  - utter_ask_name
+  - utter_ask_email
+  - utter_wrong_Id
+  - utter_ask_phone
+  - utter_ask_otp
+  - utter_ask_dob
+  - utter_ask_time
+  - utter_ask_gender
+  - utter_ask_age
+  - action_greet
+  - action_restarted
+  - utter_bye
+  - action_thank
+  - utter_ask_paymentid
+  - utter_ask_payment
+  - utter_wrong_otp
+  - utter_wrong_name
+  - utter_wrong_phone_number
+  - utter_wrong_email
+  - utter_images
+  - utter_Register
+  - utter_delete_detail
+
+forms:
+  - Registration_form
+
+
